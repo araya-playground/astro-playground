@@ -12,8 +12,14 @@ const posts = (await getCollection('blog')).sort(
 
 type Foo = string;
 type Bar = string;
+
+// Compile error
 export type FooBar = Foo 
 | Bar;
+
+// successfully compiled
+export type FooBar2 = Foo | Bar;
+
 ---
 
 <!DOCTYPE html>
